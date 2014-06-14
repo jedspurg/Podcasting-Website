@@ -4,9 +4,9 @@
     = render :partial => 'shared/sidebar_nav'
     #content.col-lg-10.col-sm-11
       .row.page-todo
-        .col-sm-7.tasks
-          //= render :partial => 'shared/pt_stories', :locals => {:stories => @stories}
-        .col-sm-5
+        .col-sm-8.tasks
+          = render :partial => 'shared/updates'
+        .col-sm-4
           = render :partial => 'shared/timeline'
 
 #myModal.modal.fade
