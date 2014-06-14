@@ -9,6 +9,13 @@ gem 'mysql2'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
+# Auth
+gem 'devise'
+
+# HTML Generation
+gem 'haml-rails'
+gem 'haml'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
@@ -30,6 +37,16 @@ gem 'jbuilder', '~> 1.2'
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
+end
+
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem "sunspot_solr"
+  gem 'debugger2', :git => "git://github.com/ko1/debugger2.git"
+  gem "hirb", ">=0.7.1"
+  gem "locale_base"
+  gem "quiet_assets"
 end
 
 # Use ActiveModel has_secure_password

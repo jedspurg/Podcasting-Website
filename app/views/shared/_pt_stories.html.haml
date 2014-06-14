@@ -1,0 +1,36 @@
+.task-list
+  %h1 Current Projects
+  .priority.high
+    %span high priority
+  - stories[:high].each do |group, stories|
+    - stories.each do |story|
+      .task.high{:class => "#{'last' if story == stories.last}"}
+        .desc
+          .title= story.name
+          %div= story.description
+        .time
+          .date= story.accepted_at.strftime("%b %m, %y") if story.accepted_at
+          %span.label{:class => "label-#{@states[group]}"}= group
+  .priority.medium
+    %span normal priority
+  - stories[:normal].each do |group, stories|
+    - stories.each do |story|
+      .task.medium{:class => "#{'last' if story == stories.last}"}
+        .desc
+          .title= story.name
+          %div= story.description
+        .time
+          .date= story.accepted_at.strftime("%b %m, %y") if story.accepted_at
+          %span.label{:class => "label-#{@states[group]}"}= group
+  .priority.low
+    %span low priority
+  - stories[:low].each do |group, stories|
+    - stories.each do |story|
+      .task.low{:class => "#{'last' if story == stories.last}"}
+        .desc
+          .title= story.name
+          %div= story.description
+        .time
+          .date= story.accepted_at.strftime("%b %m, %y") if story.accepted_at
+          %span.label{:class => "label-#{@states[group]}"}= group
+  .clearfix

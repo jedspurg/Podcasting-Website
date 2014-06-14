@@ -1,0 +1,27 @@
+= render :partial => 'shared/header'
+.container
+  .row
+    = render :partial => 'shared/sidebar_nav'
+    #content.col-lg-10.col-sm-11
+      .row.page-todo
+        .col-sm-7.tasks
+          //= render :partial => 'shared/pt_stories', :locals => {:stories => @stories}
+        .col-sm-5
+          = render :partial => 'shared/timeline'
+
+#myModal.modal.fade
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"}
+        %h4.modal-title Modal title
+      .modal-body
+        %p Here settings can be configured...
+      .modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
+        %button.btn.btn-primary{type: "button"} Save changes
+
+= render :partial => 'shared/footer'
+
+- content_for :script_files do
+  = javascript_include_tag '/assets/page-todo'
