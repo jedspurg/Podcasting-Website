@@ -5,7 +5,7 @@ development:
   pool: 10
   username: rails
   password: UyZkG2NEDC
-  #socket: /var/run/mysqld/mysqld.sock
+  # socket: /tmp/mysql.sock
   reconnect: true
 
 # Warning: The database defined as "test" will be erased and
