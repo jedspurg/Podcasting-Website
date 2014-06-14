@@ -1,3 +1,5 @@
 #!/bin/sh
-touch tmp/restart.txt
-echo "restarting Passenger app"
+unicorn_pid=`cat /home/unicorn/pids/unicorn.pid`
+echo "Restarting Unicorn ($unicorn_pid)"
+kill -HUP $unicorn_pid
+echo "restarting the magical Unicorn"
