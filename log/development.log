@@ -2112,3 +2112,10 @@ ActionController::RoutingError (No route matches [GET] "/assets/page-todo.js"):
   /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/bin/nack_worker:4:in `<main>'
 
 
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to AddEpisodes (20140614144046)
+  [1m[35m (16.5ms)[0m  CREATE TABLE `episodes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255) NOT NULL, `user_id` int(11) NOT NULL, `subtitle` varchar(255) NOT NULL, `summary` varchar(255) NOT NULL, `image_file_name` varchar(255), `image_content_type` varchar(255), `image_file_size` int(11), `image_updated_at` datetime, `audio_file_name` varchar(255), `audio_content_type` varchar(255), `audio_file_size` int(11), `audio_updated_at` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140614144046')
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
