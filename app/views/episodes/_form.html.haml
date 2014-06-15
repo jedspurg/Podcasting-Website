@@ -1,0 +1,37 @@
+.box-content
+  %div{style: "float: right; margin-bottom: 10px"}
+    %label{style: "display: inline-block; margin-right: 50px"}
+      %input#autoopen{style: "vertical-align: baseline", type: "checkbox"}>/
+      \ auto-open next field
+    %button#enable.btn.btn-default enable / disable
+  = form_for @episode do |f|
+    %table#user.table.table-bordered.table-striped{style: "clear: both"}
+      %tbody
+        %tr
+          %td{width: "35%"} Title
+          %td{width: "65%"}
+            %a#title{"data-original-title" => "Enter title", "data-pk" => "1", "data-placeholder" => "Required", "data-placement" => "right", "data-type" => "text", href: "#"}
+        %tr
+          %td Artist
+          %td
+            %a#author{"data-original-title" => "Enter podcast author", "data-pk" => "1", "data-placeholder" => "Required", "data-placement" => "right", "data-type" => "text", "data-value" => "", href: "#"}
+        %tr
+          %td Subtitle
+          %td
+            %a#subtitle{"data-original-title" => "Enter subtitle", "data-pk" => "1", "data-placeholder" => "Required", "data-placement" => "right", "data-type" => "text", href: "#"}
+        %tr
+          %td
+            Summary
+          %td
+            %a#summary{"data-original-title" => "Enter podcast summary", "data-pk" => "1", "data-placeholder" => "Required", "data-placement" => "right", "data-type" => "textarea", href: "#"}
+        %tr
+          %td Image
+          %td
+            = f.file_field :image
+        %tr
+          %td Audio
+          %td
+            = f.file_field :audio
+    .form-actions
+      %button.btn.btn-primary{type: "submit"} Create
+      %button.btn Cancel

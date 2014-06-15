@@ -37,6 +37,12 @@ gem 'jbuilder', '~> 1.2'
 # Attachments
 gem "paperclip", "~> 4.1"
 
+# XML/HTML Parser
+gem 'nokogiri'
+
+# get audio file length
+gem 'taglib-ruby', '~> 0.6.0'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

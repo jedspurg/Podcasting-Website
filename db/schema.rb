@@ -11,11 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140614144046) do
+ActiveRecord::Schema.define(version: 20140614212305) do
 
   create_table "episodes", force: true do |t|
     t.string   "title",              null: false
-    t.integer  "user_id",            null: false
     t.string   "subtitle",           null: false
     t.string   "summary",            null: false
     t.string   "image_file_name"
@@ -28,6 +27,8 @@ ActiveRecord::Schema.define(version: 20140614144046) do
     t.datetime "audio_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.date     "pub_date",           null: false
+    t.string   "author",             null: false
   end
 
   create_table "users", force: true do |t|

@@ -15,6 +15,14 @@
 //= require jquery-migrate-1.2.1.min
 //= require bootstrap.min
 //= require jquery-ui-1.10.3.custom.min
+//= require jquery.mockjax.min.js
+//= require bootstrap-editable.min.js
+//= require moment.min.js
+//= require typeahead.min.js
+//= require typeaheadjs.min.js
+//= require address.min.js
+//= require select2.min.js
 //= require jquery.sparkline.min
 //= require custom.min
 //= require core.min
+
