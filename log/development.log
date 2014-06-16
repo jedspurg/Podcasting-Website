@@ -18988,3 +18988,125 @@ ActionController::RoutingError (No route matches [POST] "/publisher.php"):
   Rendered /Users/jeramy/.rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.7ms)
   Rendered /Users/jeramy/.rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
   Rendered /Users/jeramy/.rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (25.0ms)
+
+
+
+
+Started GET "/episodes/1/edit" for 127.0.0.1 at 2014-06-16 03:05:43 -0400
+Started GET "/episodes/1/edit" for 127.0.0.1 at 2014-06-16 03:05:43 -0400
+Processing by EpisodesController#edit as HTML
+  Parameters: {"id"=>"1"}
+Processing by EpisodesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEpisode Load (0.2ms)[0m  SELECT `episodes`.* FROM `episodes` WHERE `episodes`.`id` = 1 LIMIT 1
+  Rendered shared/_header.html.haml (0.3ms)
+  Rendered shared/_sidebar_nav.html.haml (0.2ms)
+  Rendered shared/_footer.html.haml (0.2ms)
+  Rendered episodes/edit.html.haml within layouts/application (50.6ms)
+Completed 200 OK in 213ms (Views: 138.8ms | ActiveRecord: 23.9ms)
+  [1m[36mEpisode Load (0.5ms)[0m  [1mSELECT `episodes`.* FROM `episodes` WHERE `episodes`.`id` = 1 LIMIT 1[0m
+  Rendered shared/_header.html.haml (2.0ms)
+  Rendered shared/_sidebar_nav.html.haml (1.9ms)
+  Rendered shared/_footer.html.haml (1.5ms)
+  Rendered episodes/edit.html.haml within layouts/application (41.3ms)
+Completed 200 OK in 483ms (Views: 230.2ms | ActiveRecord: 2.2ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/form-x-editable-demo.js"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.2) lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/lib/nack/server.rb:155:in `handle'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/lib/nack/server.rb:109:in `rescue in block (2 levels) in start'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/lib/nack/server.rb:106:in `block (2 levels) in start'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/lib/nack/server.rb:96:in `each'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/lib/nack/server.rb:96:in `block in start'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/lib/nack/server.rb:76:in `loop'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/lib/nack/server.rb:76:in `start'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/lib/nack/server.rb:12:in `run'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/bin/nack_worker:4:in `<main>'
+
+
+
+
+Started GET "/stylesheets/application-print.css" for 127.0.0.1 at 2014-06-16 03:05:44 -0400
+
+ActionController::RoutingError (No route matches [GET] "/stylesheets/application-print.css"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.2) lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/lib/nack/server.rb:155:in `handle'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/lib/nack/server.rb:109:in `rescue in block (2 levels) in start'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/lib/nack/server.rb:106:in `block (2 levels) in start'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/lib/nack/server.rb:96:in `each'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/lib/nack/server.rb:96:in `block in start'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/lib/nack/server.rb:76:in `loop'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/lib/nack/server.rb:76:in `start'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/lib/nack/server.rb:12:in `run'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/bin/nack_worker:4:in `<main>'
+
+
+
+ActionController::RoutingError (No route matches [GET] "/assets/form-x-editable.js"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.2) lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/lib/nack/server.rb:155:in `handle'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/lib/nack/server.rb:109:in `rescue in block (2 levels) in start'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/lib/nack/server.rb:106:in `block (2 levels) in start'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/lib/nack/server.rb:96:in `each'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/lib/nack/server.rb:96:in `block in start'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/lib/nack/server.rb:76:in `loop'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/lib/nack/server.rb:76:in `start'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/lib/nack/server.rb:12:in `run'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/bin/nack_worker:4:in `<main>'
+
+
+  Rendered /Users/jeramy/.rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /Users/jeramy/.rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.3ms)
+  Rendered /Users/jeramy/.rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /Users/jeramy/.rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (20.8ms)
