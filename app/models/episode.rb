@@ -64,7 +64,7 @@ class Episode < ActiveRecord::Base
   private #####################################################################
 
   def queue_waveform_worker
-    WaveFileGeneratorWorker.perform_async(episode)
+    WaveFileGeneratorWorker.perform_async(self)
   end
 
 end
