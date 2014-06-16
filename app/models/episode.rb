@@ -7,15 +7,34 @@ class Episode < ActiveRecord::Base
   has_attached_file :audio
   validates_attachment_content_type :audio, :content_type => /\Aaudio\/.*\Z/
 
+  after_save :generate_waveform_files
+
   def image_url
     if image.present?
       "#{Rails.application.routes.url_helpers.root_url.chomp('/')}#{image.url(:original, false)}"
     end
   end
 
-  def generate_wave_file
-    %x[ ffmpeg -i "audio.path" -f wav "/assets/wav_episode_#{id}.wav" ]
-    #Waveform.generate("/assets/wav_episode_#{id}.wav", "/assets/wav_episode_#{id}", :color => "#333333", :background_color => "#FFFFFF")
+  def generate_waveform_files
+    %x[ ffmpeg -i "#{audio.path}" -f wav "#{Rails.root}/public/assets/wav_episode_#{id}.wav" ]
+    Waveform.generate("#{Rails.root}/public/assets/wav_episode_#{id}.wav", waveform_file_path, :color => "#333333", :background_color => "#FFFFFF")
+    Waveform.generate("#{Rails.root}/public/assets/wav_episode_#{id}.wav", waveform_scrub_file_path, :color => "#a46605", :background_color => :transparent)
+  end
+
+  def waveform_file_path
+    "#{Rails.root}/public/assets/wav_episode_#{id}.png"
+  end
+
+  def waveform_scrub_file_path
+    "#{Rails.root}/public/assets/wav_episode_#{id}_scrub.png"
+  end
+
+  def waveform_file_url
+    "#{Rails.application.routes.url_helpers.root_url.chomp('/')}/assets/wav_episode_#{id}.png"
+  end
+
+  def waveform_scrub_file_url
+    "#{Rails.application.routes.url_helpers.root_url.chomp('/')}/assets/wav_episode_#{id}_scrub.png"
   end
 
   def file_url

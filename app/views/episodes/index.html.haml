@@ -18,7 +18,7 @@
                   .date= episode.pub_date.strftime("%b %m, %y")
               .audiogallery{style: "opacity:0;"}
                 .items
-                  .audioplayer-tobe{"data-scrubbg" => "/assets/scrubbg.png", "data-scrubprog" => "/assets/scrubprog.png", "data-source" => "#{episode.audio.url(:original, false)}", "data-thumb" => "#{episode.image.url(:medium, false)}", "data-type" => "normal", "data-videotitle" => "#{episode.title}", style: "width:100%;"}
+                  .audioplayer-tobe{"data-scrubbg" => "#{episode.waveform_file_url}", "data-scrubprog" => "#{episode.waveform_scrub_file_url}", "data-source" => "#{episode.audio.url(:original, false)}", "data-thumb" => "#{episode.image.url(:medium, false)}", "data-type" => "normal", "data-videotitle" => "#{episode.title}", style: "width:100%;"}
 
             .clearfix
 = render :partial => 'shared/footer'
