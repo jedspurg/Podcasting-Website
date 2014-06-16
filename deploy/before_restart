@@ -32,7 +32,7 @@ if File.file? 'Rakefile'
   run "#{rake_cmd} #{tasks.join(' ')} RAILS_ENV=#{RAILS_ENV}" if tasks.any?
 
   # start sidekiq
-  run "bundle exec sidekiq"
+  run "bundle exec sidekiq -d"
 end
 
 # clear cached assets (unversioned/ignored files)
