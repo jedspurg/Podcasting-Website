@@ -7,7 +7,7 @@ class Episode < ActiveRecord::Base
   has_attached_file :audio
   validates_attachment_content_type :audio, :content_type => /\Aaudio\/.*\Z/
 
-  after_save :generate_waveform_files
+  after_save :queue_waveform_worker
 
   def image_url
     if image.present?
@@ -18,7 +18,7 @@ class Episode < ActiveRecord::Base
   def generate_waveform_files
     %x[ ffmpeg -i "#{audio.path}" -f wav "#{Rails.root}/public/assets/wav_episode_#{id}.wav" ]
     Waveform.generate("#{Rails.root}/public/assets/wav_episode_#{id}.wav", waveform_file_path, :color => "#333333", :background_color => "#FFFFFF", :force => true)
-    Waveform.generate("#{Rails.root}/public/assets/wav_episode_#{id}.wav", waveform_scrub_file_path, :color => "#a46605", :background_color => :transparent, :force => true)
+    Waveform.generate("#{Rails.root}/public/assets/wav_episode_#{id}.wav", waveform_scrub_file_path, :color => "#850413", :background_color => :transparent, :force => true)
     %x[ rm "#{Rails.root}/public/assets/wav_episode_#{id}.wav" ]
   end
 
@@ -56,9 +56,15 @@ class Episode < ActiveRecord::Base
     TagLib::FileRef.open(audio.path) do |fileref|
       unless fileref.null?
         properties = fileref.audio_properties
-        properties.length  #=> 335 (song length in seconds)
+        properties.length
       end
     end
+  end
+
+  private #####################################################################
+
+  def queue_waveform_worker
+    WaveFileGeneratorWorker.perform_async(episode)
   end
 
 end
