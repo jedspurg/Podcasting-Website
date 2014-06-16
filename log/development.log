@@ -22718,3 +22718,214 @@ Started GET "/sidekiq/dashboard/stats" for 127.0.0.1 at 2014-06-16 11:18:25 -040
 
 
 Started GET "/sidekiq/dashboard/stats" for 127.0.0.1 at 2014-06-16 11:18:27 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (5.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to AddDeviseToUsers (20140616175447)
+  [1m[35m (14.3ms)[0m  ALTER TABLE `users` ADD `email` varchar(255) DEFAULT '' NOT NULL
+Mysql2::Error: Duplicate column name 'email': ALTER TABLE `users` ADD `email` varchar(255) DEFAULT '' NOT NULL
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to AddDeviseToUsers (20140616175447)
+  [1m[35m (50.3ms)[0m  ALTER TABLE `users` ADD `encrypted_password` varchar(255) DEFAULT '' NOT NULL
+  [1m[36m (16.3ms)[0m  [1mALTER TABLE `users` ADD `reset_password_token` varchar(255)[0m
+  [1m[35m (11.6ms)[0m  ALTER TABLE `users` ADD `reset_password_sent_at` datetime
+  [1m[36m (15.6ms)[0m  [1mALTER TABLE `users` ADD `remember_created_at` datetime[0m
+  [1m[35m (16.2ms)[0m  ALTER TABLE `users` ADD `sign_in_count` int(11) DEFAULT 0 NOT NULL
+  [1m[36m (15.0ms)[0m  [1mALTER TABLE `users` ADD `current_sign_in_at` datetime[0m
+  [1m[35m (714.6ms)[0m  ALTER TABLE `users` ADD `last_sign_in_at` datetime
+  [1m[36m (45.1ms)[0m  [1mALTER TABLE `users` ADD `current_sign_in_ip` varchar(255)[0m
+  [1m[35m (21.9ms)[0m  ALTER TABLE `users` ADD `last_sign_in_ip` varchar(255)
+  [1m[36m (13.7ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_email` ON `users` (`email`) [0m
+  [1m[35m (11.3ms)[0m  CREATE UNIQUE INDEX `index_users_on_reset_password_token` ON `users` (`reset_password_token`) 
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to AddDeviseToUsers (20140616175447)
+  [1m[35m (0.5ms)[0m  ALTER TABLE `users` ADD `encrypted_password` varchar(255) DEFAULT '' NOT NULL
+Mysql2::Error: Duplicate column name 'encrypted_password': ALTER TABLE `users` ADD `encrypted_password` varchar(255) DEFAULT '' NOT NULL
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to AddDeviseToUsers (20140616175447)
+  [1m[35m (16.4ms)[0m  ALTER TABLE `users` ADD `encrypted_password` varchar(255) DEFAULT '' NOT NULL
+  [1m[36m (22.3ms)[0m  [1mALTER TABLE `users` ADD `reset_password_token` varchar(255)[0m
+  [1m[35m (18.3ms)[0m  ALTER TABLE `users` ADD `reset_password_sent_at` datetime
+  [1m[36m (16.2ms)[0m  [1mALTER TABLE `users` ADD `remember_created_at` datetime[0m
+  [1m[35m (24.5ms)[0m  ALTER TABLE `users` ADD `sign_in_count` int(11) DEFAULT 0 NOT NULL
+  [1m[36m (16.5ms)[0m  [1mALTER TABLE `users` ADD `current_sign_in_at` datetime[0m
+  [1m[35m (15.8ms)[0m  ALTER TABLE `users` ADD `last_sign_in_at` datetime
+  [1m[36m (17.6ms)[0m  [1mALTER TABLE `users` ADD `current_sign_in_ip` varchar(255)[0m
+  [1m[35m (21.8ms)[0m  ALTER TABLE `users` ADD `last_sign_in_ip` varchar(255)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to AddDeviseToUsers (20140616175447)
+  [1m[35m (14.3ms)[0m  ALTER TABLE `users` ADD `encrypted_password` varchar(255) DEFAULT '' NOT NULL
+  [1m[36m (14.0ms)[0m  [1mALTER TABLE `users` ADD `reset_password_token` varchar(255)[0m
+  [1m[35m (13.7ms)[0m  ALTER TABLE `users` ADD `reset_password_sent_at` datetime
+  [1m[36m (17.7ms)[0m  [1mALTER TABLE `users` ADD `remember_created_at` datetime[0m
+  [1m[35m (23.8ms)[0m  ALTER TABLE `users` ADD `sign_in_count` int(11) DEFAULT 0 NOT NULL
+  [1m[36m (13.3ms)[0m  [1mALTER TABLE `users` ADD `current_sign_in_at` datetime[0m
+  [1m[35m (13.7ms)[0m  ALTER TABLE `users` ADD `last_sign_in_at` datetime
+  [1m[36m (14.3ms)[0m  [1mALTER TABLE `users` ADD `current_sign_in_ip` varchar(255)[0m
+  [1m[35m (16.4ms)[0m  ALTER TABLE `users` ADD `last_sign_in_ip` varchar(255)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to AddDeviseToUsers (20140616175447)
+  [1m[35m (22.6ms)[0m  ALTER TABLE `users` DROP `password`
+  [1m[36m (21.8ms)[0m  [1mALTER TABLE `users` ADD `encrypted_password` varchar(255) DEFAULT '' NOT NULL[0m
+  [1m[35m (14.0ms)[0m  ALTER TABLE `users` ADD `reset_password_token` varchar(255)
+  [1m[36m (14.4ms)[0m  [1mALTER TABLE `users` ADD `reset_password_sent_at` datetime[0m
+  [1m[35m (14.5ms)[0m  ALTER TABLE `users` ADD `remember_created_at` datetime
+  [1m[36m (13.5ms)[0m  [1mALTER TABLE `users` ADD `sign_in_count` int(11) DEFAULT 0 NOT NULL[0m
+  [1m[35m (13.9ms)[0m  ALTER TABLE `users` ADD `current_sign_in_at` datetime
+  [1m[36m (15.2ms)[0m  [1mALTER TABLE `users` ADD `last_sign_in_at` datetime[0m
+  [1m[35m (16.9ms)[0m  ALTER TABLE `users` ADD `current_sign_in_ip` varchar(255)
+  [1m[36m (16.1ms)[0m  [1mALTER TABLE `users` ADD `last_sign_in_ip` varchar(255)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (5.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to AddDeviseToUsers (20140616175447)
+  [1m[35m (0.5ms)[0m  ALTER TABLE `users` DROP `password`
+Mysql2::Error: Can't DROP 'password'; check that column/key exists: ALTER TABLE `users` DROP `password`
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to AddDeviseToUsers (20140616175447)
+  [1m[35m (18.4ms)[0m  ALTER TABLE `users` ADD `encrypted_password` varchar(255) DEFAULT '' NOT NULL
+  [1m[36m (17.3ms)[0m  [1mALTER TABLE `users` ADD `reset_password_token` varchar(255)[0m
+  [1m[35m (12.3ms)[0m  ALTER TABLE `users` ADD `reset_password_sent_at` datetime
+  [1m[36m (18.2ms)[0m  [1mALTER TABLE `users` ADD `remember_created_at` datetime[0m
+  [1m[35m (13.8ms)[0m  ALTER TABLE `users` ADD `sign_in_count` int(11) DEFAULT 0 NOT NULL
+  [1m[36m (14.1ms)[0m  [1mALTER TABLE `users` ADD `current_sign_in_at` datetime[0m
+  [1m[35m (20.0ms)[0m  ALTER TABLE `users` ADD `last_sign_in_at` datetime
+  [1m[36m (15.8ms)[0m  [1mALTER TABLE `users` ADD `current_sign_in_ip` varchar(255)[0m
+  [1m[35m (14.3ms)[0m  ALTER TABLE `users` ADD `last_sign_in_ip` varchar(255)
+  [1m[36m (19.4ms)[0m  [1mALTER TABLE `users` CHANGE `email` `email` varchar(255) DEFAULT '' NOT NULL[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to AddDeviseToUsers (20140616175447)
+  [1m[35m (18.7ms)[0m  ALTER TABLE `users` ADD `encrypted_password` varchar(255) DEFAULT '' NOT NULL
+  [1m[36m (12.8ms)[0m  [1mALTER TABLE `users` ADD `reset_password_token` varchar(255)[0m
+  [1m[35m (12.1ms)[0m  ALTER TABLE `users` ADD `reset_password_sent_at` datetime
+  [1m[36m (14.9ms)[0m  [1mALTER TABLE `users` ADD `remember_created_at` datetime[0m
+  [1m[35m (14.8ms)[0m  ALTER TABLE `users` ADD `sign_in_count` int(11) DEFAULT 0 NOT NULL
+  [1m[36m (13.8ms)[0m  [1mALTER TABLE `users` ADD `current_sign_in_at` datetime[0m
+  [1m[35m (16.5ms)[0m  ALTER TABLE `users` ADD `last_sign_in_at` datetime
+  [1m[36m (14.7ms)[0m  [1mALTER TABLE `users` ADD `current_sign_in_ip` varchar(255)[0m
+  [1m[35m (19.7ms)[0m  ALTER TABLE `users` ADD `last_sign_in_ip` varchar(255)
+  [1m[36m (7.8ms)[0m  [1mALTER TABLE `users` CHANGE `email` `email` varchar(255) DEFAULT '' NOT NULL[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to AddDeviseToUsers (20140616175447)
+  [1m[35m (16.9ms)[0m  ALTER TABLE `users` ADD `encrypted_password` varchar(255) DEFAULT '' NOT NULL
+  [1m[36m (16.1ms)[0m  [1mALTER TABLE `users` ADD `reset_password_token` varchar(255)[0m
+  [1m[35m (13.2ms)[0m  ALTER TABLE `users` ADD `reset_password_sent_at` datetime
+  [1m[36m (16.4ms)[0m  [1mALTER TABLE `users` ADD `remember_created_at` datetime[0m
+  [1m[35m (17.3ms)[0m  ALTER TABLE `users` ADD `sign_in_count` int(11) DEFAULT 0 NOT NULL
+  [1m[36m (16.5ms)[0m  [1mALTER TABLE `users` ADD `current_sign_in_at` datetime[0m
+  [1m[35m (14.5ms)[0m  ALTER TABLE `users` ADD `last_sign_in_at` datetime
+  [1m[36m (18.7ms)[0m  [1mALTER TABLE `users` ADD `current_sign_in_ip` varchar(255)[0m
+  [1m[35m (16.6ms)[0m  ALTER TABLE `users` ADD `last_sign_in_ip` varchar(255)
+  [1m[36m (7.5ms)[0m  [1mALTER TABLE `users` CHANGE `email` `email` varchar(255) DEFAULT '' NOT NULL[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (2.6ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20140616175447')[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-16 14:28:22 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by EpisodesController#index as HTML
+  Rendered shared/_header.html.haml (2.2ms)
+  Rendered shared/_sidebar_nav.html.haml (1.8ms)
+  [1m[35mEpisode Load (0.3ms)[0m  SELECT `episodes`.* FROM `episodes`
+  Rendered shared/_footer.html.haml (1.5ms)
+  Rendered episodes/index.html.haml within layouts/application (47.6ms)
+Completed 200 OK in 300ms (Views: 212.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/stylesheets/application-print.css" for 127.0.0.1 at 2014-06-16 14:28:26 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+
+ActionController::RoutingError (No route matches [GET] "/stylesheets/application-print.css"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.2) lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/lib/nack/server.rb:155:in `handle'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/lib/nack/server.rb:109:in `rescue in block (2 levels) in start'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/lib/nack/server.rb:106:in `block (2 levels) in start'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/lib/nack/server.rb:96:in `each'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/lib/nack/server.rb:96:in `block in start'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/lib/nack/server.rb:76:in `loop'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/lib/nack/server.rb:76:in `start'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/lib/nack/server.rb:12:in `run'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/bin/nack_worker:4:in `<main>'
+
+
+  Rendered /Users/jeramy/.rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /Users/jeramy/.rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.5ms)
+  Rendered /Users/jeramy/.rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (14.7ms)
+  Rendered /Users/jeramy/.rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (134.2ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/wav_episode_1.png"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.2) lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/lib/nack/server.rb:155:in `handle'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/lib/nack/server.rb:109:in `rescue in block (2 levels) in start'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/lib/nack/server.rb:106:in `block (2 levels) in start'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/lib/nack/server.rb:96:in `each'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/lib/nack/server.rb:96:in `block in start'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/lib/nack/server.rb:76:in `loop'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/lib/nack/server.rb:76:in `start'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/lib/nack/server.rb:12:in `run'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/bin/nack_worker:4:in `<main>'
+
+
+
+ActionController::RoutingError (No route matches [GET] "/assets/wav_episode_1_scrub.png"):
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.2) lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/lib/nack/server.rb:155:in `handle'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/lib/nack/server.rb:109:in `rescue in block (2 levels) in start'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/lib/nack/server.rb:106:in `block (2 levels) in start'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/lib/nack/server.rb:96:in `each'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/lib/nack/server.rb:96:in `block in start'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/lib/nack/server.rb:76:in `loop'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/lib/nack/server.rb:76:in `start'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/lib/nack/server.rb:12:in `run'
+  /Users/jeramy/Library/Application Support/Pow/Versions/0.4.3/node_modules/nack/bin/nack_worker:4:in `<main>'
+
+
