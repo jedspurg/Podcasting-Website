@@ -19,6 +19,7 @@ class Episode < ActiveRecord::Base
     %x[ ffmpeg -i "#{audio.path}" -f wav "#{Rails.root}/public/assets/wav_episode_#{id}.wav" ]
     Waveform.generate("#{Rails.root}/public/assets/wav_episode_#{id}.wav", waveform_file_path, :color => "#333333", :background_color => "#FFFFFF")
     Waveform.generate("#{Rails.root}/public/assets/wav_episode_#{id}.wav", waveform_scrub_file_path, :color => "#a46605", :background_color => :transparent)
+    %x[ rm "#{Rails.root}/public/assets/wav_episode_#{id}.wav" ]
   end
 
   def waveform_file_path
