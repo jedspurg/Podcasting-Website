@@ -15,7 +15,7 @@
                   .title= link_to episode.title, episode
                   %div= episode.summary
                 .time
-                  .date= episode.pub_date.strftime("%b %m, %y")
+                  .date= episode.pub_date.strftime("%b %e, %Y")
               .audiogallery{style: "opacity:0;"}
                 .items
                   .audioplayer-tobe{"data-scrubbg" => "#{episode.waveform_file_url}", "data-scrubprog" => "#{episode.waveform_scrub_file_url}", "data-source" => "#{episode.audio.url(:original, false)}", "data-thumb" => "#{episode.image.url(:medium, false)}", "data-type" => "normal", "data-videotitle" => "#{episode.title}", style: "width:100%;"}
