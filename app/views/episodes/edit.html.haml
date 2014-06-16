@@ -51,10 +51,12 @@
                       %td Image
                       %td
                         = f.file_field :image, {class: "form-control"}
+                        = "current: #{@episode.image_url}"
                     %tr
                       %td Audio
                       %td
                         = f.file_field :audio, {class: "form-control"}
+                        = "current: #{@episode.audio_url}"
                 .form-actions
                   %button.btn.btn-primary{type: "submit"} Update Episode
                   %button.btn Cancel

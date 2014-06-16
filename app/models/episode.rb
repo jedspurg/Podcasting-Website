@@ -8,11 +8,15 @@ class Episode < ActiveRecord::Base
   validates_attachment_content_type :audio, :content_type => /\Aaudio\/.*\Z/
 
   def image_url
-    "#{Rails.application.routes.url_helpers.root_url.chomp('/')}#{image.url(:original, false)}"
+    if image.present?
+      "#{Rails.application.routes.url_helpers.root_url.chomp('/')}#{image.url(:original, false)}"
+    end
   end
 
   def file_url
-    "#{Rails.application.routes.url_helpers.root_url.chomp('/')}#{audio.url(:original, false)}"
+    if audio.present?
+      "#{Rails.application.routes.url_helpers.root_url.chomp('/')}#{audio.url(:original, false)}"
+    end
   end
 
   def file_length
