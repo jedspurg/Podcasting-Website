@@ -30,6 +30,9 @@ if File.file? 'Rakefile'
   tasks << "assets:precompile" if changed_assets.size > 0
 
   run "#{rake_cmd} #{tasks.join(' ')} RAILS_ENV=#{RAILS_ENV}" if tasks.any?
+
+  # start sidekiq
+  run "bundle exec sidekiq"
 end
 
 # clear cached assets (unversioned/ignored files)

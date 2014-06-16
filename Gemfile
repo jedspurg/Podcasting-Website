@@ -46,6 +46,9 @@ gem 'taglib-ruby', '~> 0.6.0'
 # Waveform Generator
 gem 'waveform'
 
+# Background Jobs
+gem 'sidekiq'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
