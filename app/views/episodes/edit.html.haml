@@ -42,8 +42,8 @@
                       %td
                         Publish Date
                       %td
-                        .controls
-                          .input-group.col-sm-4
+                        .controls.form-inline
+                          .input-group.col-sm-2
                             %span.input-group-addon
                               %i.fa.fa-calendar
                             = f.date_select(:pub_date, {with_css_classes: false}, {class: "form-control"} )
