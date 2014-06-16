@@ -49,6 +49,9 @@ gem 'waveform'
 # Background Jobs
 gem 'sidekiq'
 
+# Sinatra for Sidekiq monitoring
+gem 'sinatra', '>= 1.3.0', :require => nil
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
