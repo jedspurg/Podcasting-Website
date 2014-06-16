@@ -56,7 +56,7 @@
                       %td Audio
                       %td
                         = f.file_field :audio, {class: "form-control"}
-                        = "current: #{@episode.audio_url}"
+                        = "current: #{@episode.file_url}"
                 .form-actions
                   %button.btn.btn-primary{type: "submit"} Update Episode
                   %button.btn Cancel
