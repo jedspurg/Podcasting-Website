@@ -1,0 +1,42 @@
+= render :partial => 'shared/header'
+.container
+  .row
+    = render :partial => 'shared/sidebar_nav'
+    #content.col-lg-10.col-sm-11
+      .row.page-todo
+        .col-sm-12.tasks
+          .task-list
+            %h1 machine language podcasts
+            .priority.low
+              %span episodes
+            - @episodes.each do |episode|
+              .task.low{:class => "#{'last' if episode == @episodes.last}"}
+                .desc
+                  .title= link_to episode.title, episode
+                  %div= episode.summary
+                .time
+                  .date= episode.pub_date.strftime("%b %m, %y")
+              .audiogallery{style: "opacity:0;"}
+                .items
+                  .audioplayer-tobe{"data-scrubbg" => "/assets/scrubbg.png", "data-scrubprog" => "/assets/scrubprog.png", "data-source" => "#{episode.audio.url(:original, false)}", "data-thumb" => "#{episode.image.url(:medium, false)}", "data-type" => "normal", "data-videotitle" => "#{episode.title}", style: "width:100%;"}
+
+            .clearfix
+= render :partial => 'shared/footer'
+- content_for :script_files do
+  = javascript_include_tag '/assets/audioplayer/audioplayer.js'
+- content_for :script do
+  :javascript
+    jQuery(document).ready(function ($) {
+      var settings_ap = {
+        disable_volume: 'off'
+        ,disable_scrub: 'default'
+        ,design_skin: 'skin-wave'
+        ,skinwave_dynamicwaves:'on'
+      };
+      dzsag_init('.audiogallery',{
+        'transition':'fade'
+        ,'autoplay' : 'off'
+        ,'settings_ap':settings_ap
+      });
+    });
+

@@ -7,6 +7,9 @@ class EpisodesController < ApplicationController
         podcast = Podcaster.new(PODCAST_SETTINGS, @episodes)
         render :xml => podcast.to_xml
       end
+      format.html do
+        @episodes
+      end
     end
   end
 
@@ -19,7 +22,7 @@ class EpisodesController < ApplicationController
   end
 
   def show
-    redirect_to episodes_path
+    @episode = Episode.find(params[:id])
   end
 
   def create

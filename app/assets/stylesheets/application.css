@@ -12,4 +12,5 @@
  *= require bootstrap.min
  *= require style.min
  *= require retina.min
+ *= require audioplayer
  */

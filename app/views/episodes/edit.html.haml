@@ -42,11 +42,11 @@
                       %td
                         Publish Date
                       %td
-                        .controls.form-inline
-                          .input-group.col-sm-2
+                        .controls
+                          .input-group.col-sm-2.form-inline
                             %span.input-group-addon
                               %i.fa.fa-calendar
-                            = f.date_select(:pub_date, {with_css_classes: false}, {class: "form-control"} )
+                            = f.date_select(:pub_date, {with_css_classes: false}, {class: "form-control", style: "float:left"} )
                     %tr
                       %td Image
                       %td

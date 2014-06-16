@@ -13,6 +13,11 @@ class Episode < ActiveRecord::Base
     end
   end
 
+  def generate_wave_file
+    %x[ ffmpeg -i "audio.path" -f wav "/assets/wav_episode_#{id}.wav" ]
+    #Waveform.generate("/assets/wav_episode_#{id}.wav", "/assets/wav_episode_#{id}", :color => "#333333", :background_color => "#FFFFFF")
+  end
+
   def file_url
     if audio.present?
       "#{Rails.application.routes.url_helpers.root_url.chomp('/')}#{audio.url(:original, false)}"
