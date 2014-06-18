@@ -1,4 +1,5 @@
 class EpisodesController < ApplicationController
+  load_and_authorize_resource
 
   def index
     @episodes = Episode.all

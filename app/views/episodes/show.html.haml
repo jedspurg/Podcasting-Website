@@ -3,65 +3,48 @@
   .row
     = render :partial => 'shared/sidebar_nav'
     #content.col-lg-10.col-sm-11
-      .row
-        .col-lg-12
-          .box
-            .box-header
-              %h2
-                %i.fa.fa-edit>
-                Edit Episode
-              .box-icon
-                %a.btn-setting{href: "#"}
-                  %i.fa.fa-wrench
-                %a.btn-minimize{href: "#"}
-                  %i.fa.fa-chevron-up
-                %a.btn-close{href: "#"}
-                  %i.fa.fa-times
-            .box-content
-              = form_for @episode do |f|
-                %table#user.table.table-bordered.table-striped{style: "clear: both"}
-                  %tbody
-                    %tr
-                      %td{width: "35%"} Title
-                      %td{width: "65%"}
-                        = f.text_field :title, {class: "form-control"}
-                    %tr
-                      %td Artist
-                      %td
-                        = f.text_field :author, {class: "form-control"}
-                    %tr
-                      %td Subtitle
-                      %td
-                        = f.text_field :subtitle, {class: "form-control"}
-                    %tr
-                      %td
-                        Summary
-                      %td
-                        = f.text_area :summary, {class: "form-control"}
-                    %tr
-                      %td
-                        Publish Date
-                      %td
-                        .controls.form-inline
-                          .input-group.col-sm-2
-                            %span.input-group-addon
-                              %i.fa.fa-calendar
-                            = f.date_select(:pub_date, {with_css_classes: false}, {class: "form-control"} )
-                    %tr
-                      %td Image
-                      %td
-                        = f.file_field :image, {class: "form-control"}
-                        = "current: #{@episode.image_url}"
-                    %tr
-                      %td Audio
-                      %td
-                        = f.file_field :audio, {class: "form-control"}
-                        = "current: #{@episode.file_url}"
-                .form-actions
-                  %button.btn.btn-primary{type: "submit"} Update Episode
-                  %button.btn Cancel
-= render :partial => 'shared/footer'
+      .row.page-todo
+        .col-sm-12.tasks
+          .task-list
+            %h1= @episode.title
+            .priority.low
+              %span= @episode.pub_date.strftime("%b %e, %Y")
+            .task.low
+              .desc
+                .title
+                  %small= @episode.subtitle
+                %div= @episode.summary.html_safe
+              .time
+                .date
+                  - if can? :edit, User
+                    = link_to "Edit", edit_episode_path(@episode), :class => "btn"
+            .audiogallery{style: "opacity:0;"}
+              .items
+                .audioplayer-tobe{"data-source" => "#{@episode.audio.url(:original, false)}", "data-thumb" => "#{@episode.image.url(:medium, false)}", "data-type" => "normal", "data-videotitle" => "#{@episode.title}", style: "width:100%;"}
 
+            .clearfix
+= render :partial => 'shared/footer'
 - content_for :script_files do
-  = javascript_include_tag '/assets/form-x-editable-demo.js'
-  = javascript_include_tag '/assets/form-x-editable.js'
+  = javascript_include_tag '/assets/audioplayer/audioplayer.js'
+- content_for :script do
+  :javascript
+    jQuery(document).ready(function ($) {
+      var settings_ap = {
+        disable_volume: 'off'
+        ,disable_scrub: 'default'
+        ,design_skin: 'skin-wave'
+        ,skinwave_dynamicwaves:'off'
+        ,skinwave_enableSpectrum: 'off'
+        ,settings_backup_type:'full'
+        ,settings_useflashplayer:'auto'
+        ,skinwave_spectrummultiplier: '4'
+        ,skinwave_comments_enable:'on'
+      };
+      dzsag_init('.audiogallery',{
+        'transition'  : 'fade',
+        'autoplay'    : 'off',
+        'settings_ap' : settings_ap
+      });
+    });
+
+

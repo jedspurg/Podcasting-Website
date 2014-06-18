@@ -1,0 +1,38 @@
+= render :partial => 'shared/header'
+.container
+  .row
+    = render :partial => 'shared/sidebar_nav'
+    #content.col-lg-10.col-sm-11
+      .row
+        .col-lg-12
+          .box
+            .box-header
+              %h2
+                %i.fa.fa-edit>
+                Sign In
+            .box-content
+              = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+                %table#user.table.table-bordered.table-striped{style: "clear: both"}
+                  %tbody
+                    %tr
+                      %td{width: "15%"} Email
+                      %td{width: "85%"}
+                        = f.email_field :email, {class: "form-control"}
+                    %tr
+                      %td Password
+                      %td
+                        = f.password_field :password, {class: "form-control"}
+                    %tr
+                      %td{:colspan => 2}
+                        - if devise_mapping.rememberable?
+                          = f.check_box :remember_me
+                          = f.label :remember_me
+                .form-actions
+                  %button.btn.btn-primary{type: "submit"} Log in
+                  %button.btn Cancel
+= render :partial => 'shared/footer'
+
+- content_for :script_files do
+  = javascript_include_tag '/assets/form-x-editable-demo.js'
+  = javascript_include_tag '/assets/form-x-editable.js'
+

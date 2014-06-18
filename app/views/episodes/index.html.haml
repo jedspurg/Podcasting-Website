@@ -20,7 +20,7 @@
                   .date= episode.pub_date.strftime("%b %e, %Y")
               .audiogallery{style: "opacity:0;"}
                 .items
-                  .audioplayer-tobe{"data-scrubbg" => "#{episode.waveform_file_url}", "data-scrubprog" => "#{episode.waveform_scrub_file_url}", "data-source" => "#{episode.audio.url(:original, false)}", "data-thumb" => "#{episode.image.url(:medium, false)}", "data-type" => "normal", "data-videotitle" => "#{episode.title}", style: "width:100%;"}
+                  .audioplayer-tobe{"data-source" => "#{episode.audio.url(:original, false)}", "data-thumb" => "#{episode.image.url(:medium, false)}", "data-type" => "normal", "data-videotitle" => "#{episode.title}", style: "width:100%;"}
 
             .clearfix
 = render :partial => 'shared/footer'
@@ -30,10 +30,15 @@
   :javascript
     jQuery(document).ready(function ($) {
       var settings_ap = {
-        disable_volume        : 'off',
-        disable_scrub         : 'default',
-        design_skin           : 'skin-wave',
-        skinwave_dynamicwaves : 'on'
+        disable_volume: 'off'
+        ,disable_scrub: 'default'
+        ,design_skin: 'skin-wave'
+        ,skinwave_dynamicwaves:'off'
+        ,skinwave_enableSpectrum: 'off'
+        ,settings_backup_type:'full'
+        ,settings_useflashplayer:'auto'
+        ,skinwave_spectrummultiplier: '4'
+        ,skinwave_comments_enable:'on'
       };
       dzsag_init('.audiogallery',{
         'transition'  : 'fade',
@@ -41,4 +46,5 @@
         'settings_ap' : settings_ap
       });
     });
+
 

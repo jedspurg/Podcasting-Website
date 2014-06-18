@@ -26,13 +26,9 @@ if File.file? 'Rakefile'
   tasks << "db:migrate" if num_migrations > 0
 
   # precompile assets
-  changed_assets = `git diff #{oldrev} #{newrev} --name-only -z app/assets`.split("\0")
-  tasks << "assets:precompile" if changed_assets.size > 0
+  tasks << "assets:precompile"
 
-  run "#{rake_cmd} #{tasks.join(' ')} RAILS_ENV=#{RAILS_ENV}" if tasks.any?
-
-  # start workers
-  run "bundle exec sidekiq -d -L log/sidekiq.log"
+  run "#{rake_cmd} #{tasks.join(' ')} RAILS_ENV=#{RAILS_ENV}"
 end
 
 # clear cached assets (unversioned/ignored files)
@@ -40,3 +36,6 @@ run "git clean -x -f -- public/stylesheets public/javascripts"
 
 # clean unversioned files from vendor/plugins (e.g. old submodules)
 run "git clean -d -f -- vendor/plugins"
+
+# start workers
+run "bundle exec sidekiq -d -L log/sidekiq.log"
