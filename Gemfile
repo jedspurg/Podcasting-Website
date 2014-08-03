@@ -13,7 +13,7 @@ gem 'sass-rails', '~> 4.0.0'
 gem 'devise'
 
 # Auth Rules
-gem 'cancan'
+gem 'cancancan'
 
 # HTML Generation
 gem 'haml-rails'
