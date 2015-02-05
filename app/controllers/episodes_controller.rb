@@ -2,7 +2,7 @@ class EpisodesController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @episodes = Episode.all
+    @episodes = Episode.all.order(created_at: :desc)
     respond_to do |format|
       format.rss do
         podcast = Podcaster.new(PODCAST_SETTINGS, @episodes)
